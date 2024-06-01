@@ -1,0 +1,5 @@
+- https://realpython.com/pytest-python-testing/
+- https://testdriven.io/blog/pytest-for-beginners/
+- https://pytest-with-eric.com/fixtures/pytest-fixture-scope/
+- https://pytest-with-eric.com/pytest-best-practices/pytest-conftest/
+- https://pytest-with-eric.com/introduction/how-to-run-pytest-in-vscode/
