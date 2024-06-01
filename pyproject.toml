@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "testing-with-pytest"
+version = "0.1.0"
+description = ""
+authors = ["congvmit <congvm.it@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pytest = "^8.2.1"
+pytest-mock = "^3.14.0"
+pytest-asyncio = "^0.23.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

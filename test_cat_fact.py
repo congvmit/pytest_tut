@@ -1,4 +1,4 @@
-from cat_fact import get_cat_fact
+from cat_fact_1 import get_cat_fact
 
 # def test_cat_fact_no_monkeypatch():
 #     code, response = get_cat_fact()
@@ -13,10 +13,7 @@ def test_cat_fact_w_monkeypatch(monkeypatch):
             self.url = "https://meowfacts.herokuapp.com/"
 
         def json(self):
-            return {
-                "data": ["Mother cats teach their " 
-                         "kittens to use the litter box."]
-            }
+            return {"data": ["Mother cats teach their " "kittens to use the litter box."]}
 
     def mock_get(*args, **kwargs):
         return MockResponse()
@@ -24,7 +21,5 @@ def test_cat_fact_w_monkeypatch(monkeypatch):
     monkeypatch.setattr("requests.get", mock_get)
     assert get_cat_fact() == (
         200,
-        {"data": ["Mother cats " 
-                  "teach their kittens " 
-                  "to use the litter box."]},
+        {"data": ["Mother cats " "teach their kittens " "to use the litter box."]},
     )
