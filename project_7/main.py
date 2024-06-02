@@ -1,6 +1,6 @@
 from app import init_app
 
-app = init_app()
+app = init_app(init_db=True)
 
 # # DEBUG
 # import mipkit;mipkit.debug.set_trace();exit();
@@ -15,4 +15,3 @@ app = init_app()
 #     return {"q": q, "skip": 5, "limit": 10}
 
 # app.dependency_overrides[common_parameters] = override_dependency
-
