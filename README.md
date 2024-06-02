@@ -25,6 +25,12 @@ Mock actually uses Monkeypatch under the hood to mock or change certain objects 
 The exact differences are not really important, what’s more important is that you understand that it’s possible to override functions, classes, libraries and variables in Unit Tests.
 ```
 
+## Run 
+```bash
+# pytest with verbose output
+pytest -v -s
+```
+
 ## References
 
 - https://realpython.com/pytest-python-testing/
@@ -35,3 +41,4 @@ The exact differences are not really important, what’s more important is that 
 - https://pytest-with-eric.com/introduction/fixture-mocker-not-found/
 - https://pytest-with-eric.com/mocking/pytest-monkeypatch/#:~:text=The%20two%20are%20very%20similar,as%20part%20of%20your%20test.
 - https://stackoverflow.com/questions/41701226/what-is-the-difference-between-mocking-and-monkey-patching
+- https://medium.com/@johnidouglasmarangon/how-to-setup-memory-database-test-with-pytest-and-sqlalchemy-ca2872a92708
