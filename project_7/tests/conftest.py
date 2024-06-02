@@ -7,11 +7,11 @@ from fastapi.testclient import TestClient
 from httpx import ASGITransport, AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession
 
-# import sys
-# sys.path.append("..") # Use pytest.ini instead
-
 from app import init_app
 from db import Base, get_db, sessionmanager
+
+# import sys
+# sys.path.append("..") # Use pytest.ini instead
 
 
 @pytest.fixture(autouse=True, scope="session")
@@ -24,6 +24,7 @@ def app():
 @pytest.fixture
 def client(app):
     print("> Fixture: Creating client")
+
     async def get_db_override():
         async with sessionmanager.session() as session:
             yield session

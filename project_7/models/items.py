@@ -2,8 +2,6 @@ from sqlalchemy import Column, Float, Integer, String
 
 from db import Base
 
-print("Go here!")
-
 
 class Item(Base):
     __tablename__ = "items"
