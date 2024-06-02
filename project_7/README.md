@@ -1,6 +1,11 @@
 # FastAPI + SQLAlchemy + Pytest
 
 
+# TODO
+- [x] Add FastAPI
+- [x] Add SQLAlchemy Models
+- [x] Add Pytest
+- [ ] Add Alemic for migrations
 
 ## Known Issues
 
