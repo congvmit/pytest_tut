@@ -5,7 +5,33 @@
 - [x] Add FastAPI
 - [x] Add SQLAlchemy Models
 - [x] Add Pytest
-- [ ] Add Alemic for migrations
+- [x] Add Alemic for migrations
+
+## Installation
+
+```bash
+
+# Create a virtual environment
+python3 -m venv venv
+
+# Activate the virtual environment
+source venv/bin/activate
+
+# Install the requirements with poetry
+poetry install
+
+# Run the FastAPI server
+uvicorn main:app --reload
+
+# Run the migrations
+alembic upgrade head
+
+# Run the tests
+pytest . -v -s
+
+```
+
+
 
 ## Known Issues
 

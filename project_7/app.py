@@ -7,38 +7,6 @@ from fastapi import FastAPI
 # from sqlalchemy.ext.asyncio import AsyncSession
 from db import DB_CONFIG, get_db, sessionmanager
 
-# Base
-# class Item(Base):
-#     __tablename__ = "items"
-
-#     id = Column(Integer, primary_key=True)
-#     name = Column(String, nullable=False)
-#     description = Column(String, nullable=True)
-#     price = Column(Float, nullable=True)
-
-
-# async def get_session():
-#     session = Session()
-#     try:
-#         yield session
-#     except Exception as e:
-#         await session.rollback()
-#         raise e
-#     finally:
-#         await session.commit()
-#         await session.close()
-
-
-# Schema
-# class CreateItem(BaseModel):
-#     name: str
-#     description: str = None
-#     price: float
-
-
-# class GetItem(BaseModel):
-#     id: int
-
 
 def init_app(init_db=True):
     lifespan = None
@@ -62,7 +30,9 @@ def init_app(init_db=True):
         return {"message": "Hello World"}
 
     from views.items import router as items_router
+    from views.users import router as users_router
 
     app.include_router(items_router)
+    app.include_router(users_router)
 
     return app

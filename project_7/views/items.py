@@ -3,7 +3,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from db import get_db
 from models.items import Item
-from schemas import CreateItem
+from schemas.items import CreateItem
 
 router = APIRouter(prefix="/items", tags=["items"])
 
