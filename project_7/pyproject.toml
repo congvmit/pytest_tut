@@ -1,0 +1,94 @@
+[tool.poetry]
+name = "project-7"
+version = "0.1.0"
+description = ""
+authors = ["Cong Vo <congvm.it@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+aiosqlite = "^0.20.0"
+sqlalchemy = "^2.0.30"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.2.2"
+pytest-asyncio = "^0.23.7"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.4.8"
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+# pythonpath = .
+# minversion = 8.0.0
+# addopts = -s
+# testpaths = 
+    # tests
+
+[tool.ruff]
+extend-exclude = [
+    "__pycache__/",
+    "build",
+    "dist"
+]
+line-length = 90
+src = ["models", "schemas", "views"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+
+[tool.ruff.lint]
+extend-select = [
+    "C4",
+    "D200",
+    "D201",
+    "D204",
+    "D205",
+    "D206",
+    "D210",
+    "D211",
+    "D213",
+    "D300",
+    # "D400",
+    "D402",
+    "D403",
+    "D404",
+    "D419",
+    "E",
+    "F",
+    "G010",
+    "I001",
+    "INP001",
+    "N805",
+    "PERF101",
+    "PERF102",
+    "PERF401",
+    "PERF402",
+    "PGH004",
+    "PGH005",
+    "PIE794",
+    "PIE796",
+    "PIE807",
+    "PIE810",
+    "RET502",
+    "RET503",
+    "RET504",
+    "RET505",
+    "RUF015",
+    "RUF100",
+    # "S101", 
+    # "T201",
+    # "T20",
+    "W",
+]
+

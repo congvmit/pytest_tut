@@ -7,7 +7,8 @@ class Item(Base):
     __tablename__ = "items"
 
     # https://docs.sqlalchemy.org/en/20/core/metadata.html#sqlalchemy.schema.Table.params.extend_existing
-    # Pytest Problem: sqlalchemy.exc.InvalidRequestError: Table 'items' is already defined for this MetaData instance.
+    # Pytest Problem: sqlalchemy.exc.InvalidRequestError: Table 'items' is
+    # already defined for this MetaData instance.
     __table_args__ = {
         "keep_existing": True,
         # "extend_existing": True

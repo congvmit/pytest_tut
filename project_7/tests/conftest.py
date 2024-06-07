@@ -1,14 +1,10 @@
-import asyncio
 from contextlib import ExitStack
 
 import pytest
 import pytest_asyncio
-from fastapi.testclient import TestClient
-from httpx import ASGITransport, AsyncClient
-from sqlalchemy.ext.asyncio import AsyncSession
-
 from app import init_app
-from db import Base, get_db, sessionmanager
+from db import get_db, sessionmanager
+from fastapi.testclient import TestClient
 
 # import sys
 # sys.path.append("..") # Use pytest.ini instead
@@ -36,10 +32,11 @@ def client(app):
     with TestClient(app=app, base_url="http://test") as c:
         yield c
 
-    # Method 2: Using AsyncClient from httpx
+    # Method 2: Using AsyncClient from httpx.
     # Cons:
     # - Does not call lifespan events on the FastAPI app
-    # async with AsyncClient(base_url="http://test", transport=ASGITransport(app=app)) as c:
+    # async with AsyncClient(base_url="http://test",
+    #                        transport=ASGITransport(app=app)) as c:
     #     yield c
 
 

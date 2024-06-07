@@ -2,10 +2,11 @@
 
 
 # TODO
-- [x] Add FastAPI
-- [x] Add SQLAlchemy Models
-- [x] Add Pytest
-- [x] Add Alemic for migrations
+- [x] Add `FastAPI`
+- [x] Add `SQLAlchemy` Models
+- [x] Add `Pytest`
+- [x] Add `Alemic` for migrations
+- [ ] Add `Poetry` to manage dependencies
 
 ## Installation
 

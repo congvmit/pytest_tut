@@ -14,7 +14,7 @@ async def create_user(user: CreateUser, session: AsyncSession = Depends(get_db))
         new_user = User(name=user.name, email=user.email, password=user.password)
         session.add(new_user)
         await session.commit()
-    except Exception as e:
+    except Exception:
         return {"message": "internal error", "data": {}}
     else:
         return {
@@ -33,14 +33,13 @@ async def get_user_by_id(id: str, session: AsyncSession = Depends(get_db)):
         user = await session.get(User, id)
         if user is None:
             return {"message": "success", "data": {}}
-        else:
-            return {
-                "message": "success",
-                "data": {
-                    "id": user.id,
-                    "name": user.name,
-                    "email": user.email,
-                },
-            }
+        return {
+            "message": "success",
+            "data": {
+                "id": user.id,
+                "name": user.name,
+                "email": user.email,
+            },
+        }
     except Exception as e:
         return {"message": f"internal error {e}", "data": {}}

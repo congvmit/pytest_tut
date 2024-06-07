@@ -2,7 +2,6 @@
 import contextlib
 from typing import AsyncIterator
 
-from fastapi import Depends
 from sqlalchemy.ext.asyncio import (
     AsyncConnection,
     AsyncEngine,
@@ -17,14 +16,15 @@ DB_CONFIG = "sqlite+aiosqlite:///./test.db"
 
 
 class DatabaseSessionManager:
-
     def __init__(self):
         self._engine: AsyncEngine | None = None
         self._sessionmaker: async_sessionmaker | None = None
 
     def init(self, host: str):
         print(f"Initializing database with host: {host}")
-        self._engine = create_async_engine(host, echo=False, future=True, pool_pre_ping=True)
+        self._engine = create_async_engine(
+            host, echo=False, future=True, pool_pre_ping=True
+        )
         self._sessionmaker = async_sessionmaker(
             autocommit=False, bind=self._engine, expire_on_commit=False, autoflush=False
         )

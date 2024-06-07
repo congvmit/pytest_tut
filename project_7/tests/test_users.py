@@ -8,7 +8,7 @@ async def test_create_user(client):
         json={"name": "user1", "email": "email1", "password": "password1"},
     )
     user_id = response.json()["data"]["id"]
-    print("user_id", user_id)
+    # print("user_id", user_id)
     assert response.status_code == 200
     assert response.json() == {
         "message": "success",
@@ -23,7 +23,7 @@ async def test_get_user_found(client):
         json={"name": "user2", "email": "email2", "password": "password2"},
     )
     user_id = response.json()["data"]["id"]
-    print("user_id", user_id)
+    # print("user_id", user_id)
     response = client.get(f"/users/{user_id}")
     # print(response.json())
     assert response.status_code == 200
@@ -36,11 +36,9 @@ async def test_get_user_found(client):
 @pytest.mark.asyncio
 async def test_get_user_not_found(client):
     response = client.get("/users/3")
-    print(response.json())
+    # print(response.json())
     assert response.status_code == 200
     assert response.json() == {
         "message": "success",
         "data": {},
     }
-
-    

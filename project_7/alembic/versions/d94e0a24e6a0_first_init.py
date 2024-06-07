@@ -1,7 +1,8 @@
-"""First init
+"""
+First init
 
 Revision ID: d94e0a24e6a0
-Revises: 
+Revises:
 Create Date: 2024-06-03 16:07:15.133889
 
 """
