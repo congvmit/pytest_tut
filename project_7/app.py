@@ -1,11 +1,7 @@
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
-
-# from pydantic import BaseModel
-# from sqlalchemy import Column, Float, Integer, String, create_engine
-# from sqlalchemy.ext.asyncio import AsyncSession
 from db import DB_CONFIG, sessionmanager
+from fastapi import FastAPI
 
 
 def init_app(init_db=True):
