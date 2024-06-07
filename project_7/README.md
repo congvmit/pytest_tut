@@ -30,6 +30,9 @@ alembic upgrade head
 # Run the tests
 pytest . -v -s
 
+
+# Export the requirements
+poetry export -f requirements.txt --output requirements.txt
 ```
 
 
