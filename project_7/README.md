@@ -6,7 +6,10 @@
 - [x] Add `SQLAlchemy` Models
 - [x] Add `Pytest`
 - [x] Add `Alemic` for migrations
-- [ ] Add `Poetry` to manage dependencies
+- [x] Add `Poetry` to manage dependencies
+- [x] Add `cx_Freeze` to create an executable
+- [x] Add `docker` to containerize the application
+- [ ] Add `GitHub Actions` for CI/CD
 
 ## Installation
 
@@ -29,7 +32,6 @@ alembic upgrade head
 
 # Run the tests
 pytest . -v -s
-
 
 # Export the requirements
 poetry export -f requirements.txt --output requirements.txt
